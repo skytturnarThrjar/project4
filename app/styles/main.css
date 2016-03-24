@@ -1,10 +1,24 @@
 .Player {
-	position: absolute;
+	/*position: absolute;
 	top: 0;
 	left: 0;
 	width: 5em;
 	height: 5em;
-	background: blue;
+	background: #ffff00;*/
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 4em;
+	height: 2.8em;
+	background: url('http://s28.postimg.org/k90gybbtl/bird_Sprite.png');
+	animation: birdFlap 0.2s steps(3, end) infinite alternate;
+	transition: transform 0.3s;
+}
+
+/*Færa þetta í scss skránna??*/
+@keyframes birdFlap {
+  0% {background-position: 0em 8.4em;}
+  100% {background-position: 0em 0em;}
 }
 
 .Scoreboard {
@@ -15,7 +29,7 @@
 	width: 40em;
 	margin-left: -20em;
 	box-sizing: border-box;
-	background: purple;
+	background: #00e673;
 	text-align: center;
 	-webkit-transform: translate(0, -40em);
 	-webkit-transition: -webkit-transform 0.5s;
@@ -56,9 +70,11 @@ position: absolute;
 left: 50%;
 top: 50%;
 width: 102.4em;
-height: 57.6em;
+/*height: 57.6em;*/
+height: 45em;
 margin-left: -51.2em;
 margin-top: -28.8em;
 overflow: hidden;
-background: red;
+background: url('http://s30.postimg.org/tycvlfagh/background.png');
+/*background: #d9ffb3;*/
 }
