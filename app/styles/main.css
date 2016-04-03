@@ -81,3 +81,23 @@ body {
 	background: url('http://tipministries.com/wp-content/uploads/2015/11/Grey-Background-48.jpg');
 	/*background: #d9ffb3;*/
 }
+
+.floor {
+   position: absolute;
+   bottom: 0;
+   width: 100%;
+   height: 20%;
+   background-image: url('../images/floor.png');
+   background-repeat: repeat-x;
+   background-position: 0px 0px;
+   background-color: #ded895;
+	 border-bottom-right-radius: 1.5em;
+	 border-bottom-left-radius: 1.5em;
+   -webkit-animation: moveFloor 2516ms linear infinite;
+   animation: moveFloor 2516ms linear infinite;
+}
+
+@keyframes moveFloor {
+   0% { background-position: 0px 0px; }
+   100% { background-position: -335px 0px; }
+}
