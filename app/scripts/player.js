@@ -2,6 +2,9 @@ window.Player = (function() {
 	'use strict';
 
 	var Controls = window.Controls;
+	//var up = true;
+	//var down = false;
+
 
 	// All these constants are in em's, multiply by 10 pixels
 	// for 1024x576px canvas.
@@ -26,17 +29,22 @@ window.Player = (function() {
 	};
 
 	Player.prototype.onFrame = function(delta) {
-		if (Controls.keys.right) {
+		/*if (Controls.keys.right) {
 			this.pos.x += delta * SPEED;
 		}
 		if (Controls.keys.left) {
 			this.pos.x -= delta * SPEED;
-		}
-		if (Controls.keys.down) {
+		}*/
+
+		if (!Controls.keys.space) {
 			this.pos.y += delta * SPEED;
+			//up = false;
+			//down = true;
 		}
-		if (Controls.keys.up) {
+		if (Controls.keys.space /*&& !up && down*/) {
 			this.pos.y -= delta * SPEED;
+			//up = true;
+			//down = false;
 		}
 
 		this.checkCollisionWithBounds();

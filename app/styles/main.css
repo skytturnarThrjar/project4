@@ -9,13 +9,13 @@
 	top: 0;
 	left: 0;
 	width: 4em;
-	height: 2.8em;
-	background: url('http://s28.postimg.org/k90gybbtl/bird_Sprite.png');
+	height: 2.9em;
+	background: url('../kimsmall.png');/*url('http://s28.postimg.org/k90gybbtl/bird_Sprite.png');*/
 	animation: birdFlap 0.2s steps(3, end) infinite alternate;
 	transition: transform 0.3s;
 }
 
-/*Færa þetta í scss skránna??*/
+/*Færa þetta í scss skránna
 @keyframes birdFlap {
   0% {background-position: 0em 8.4em;}
   100% {background-position: 0em 0em;}

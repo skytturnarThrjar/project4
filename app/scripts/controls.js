@@ -11,6 +11,8 @@ window.Controls = (function() {
         38: 'up',
         39: 'right',
         40: 'down'
+        //104: 'space',
+        //105: 'space'
     };
 
     /**
@@ -57,7 +59,7 @@ window.Controls = (function() {
         this._didJump = false;
         return answer;
     };
-    
+
     // Export singleton.
     return new Controls();
 })();
