@@ -1,0 +1,25 @@
+.PipeTop {
+
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 10em;
+  height: 18em;
+
+  background-image: url('../images/kmin-topdown.png');
+  background-repeat: no-repeat, repeat-y;
+  transform: translateZ(0);
+}
+
+.PipeBottom {
+
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 10em;
+  height: 18em;
+
+  background-image: url('../images/kmin.png');
+  background-repeat: no-repeat, repeat-y;
+  transform: translateZ(0);
+}

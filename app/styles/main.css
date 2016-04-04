@@ -107,26 +107,42 @@ body {
    animation: moveFloor 2516ms linear infinite;
 }
 
-.pipe {
+/*.pipe {
    position: absolute;
    bottom: 0;
    width: 10.9em;
    height: 35em;
    background-image: url('../images/kmin.png');
    background-position: 0px 0px;
+}*/
+
+.pipeTop1, .pipeTop2, .pipeTop3 {
+
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 9em;
+  height: 60em;
+	background-position:top;
+
+  background-image: url('../images/kmin-topdown.png');
+  background-repeat: no-repeat, repeat-y;
+  transform: translateZ(0);
 }
 
-/*.pipe {
-   position: absolute;
-   left: -100px;
-   width: 52px;
-   height: 100%;
-   z-index: 10;
-	 background-repeat: repeat-x;
-	 background-image: url('../images/kmin.png');
-   -webkit-animation: moveFloorPipe 7500ms linear;
-   animation: movePipe 7500ms linear;
-}*/
+.pipeBottom1, .pipeBottom2, .pipeBottom3 {
+
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 9em;
+  height: 30em;
+
+  background-image: url('../images/kmin.png');
+  background-repeat: no-repeat, repeat-y;
+  transform: translateZ(0);
+}
+
 
 @keyframes moveCloud {
 	0% {background-position: 0px 0px;}
