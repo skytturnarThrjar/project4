@@ -30,7 +30,9 @@ window.Player = (function() {
 			this.pos.y += delta * SPEED;
 		}
 		if (Controls.keys.space) {
-			document.getElementById('kanyeYo').play();
+			if(document.getElementById('yoSound').className === 'on') {
+				document.getElementById('yoSound').play();
+			}
 			this.pos.y -= delta * SPEED;
 		}
 
@@ -45,7 +47,10 @@ window.Player = (function() {
 			this.pos.x + WIDTH > this.game.WORLD_WIDTH ||
 			this.pos.y < 0 ||
 			this.pos.y + HEIGHT > this.game.WORLD_HEIGHT) {
-			return this.game.gameover();
+				if(document.getElementById('laugh').className === 'on') {
+					document.getElementById('laugh').play();
+				}
+				return this.game.gameover();
 		}
 	};
 

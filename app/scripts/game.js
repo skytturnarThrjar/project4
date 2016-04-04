@@ -50,6 +50,7 @@ window.Game = (function() {
 		this.lastFrame = +new Date() / 1000;
 		window.requestAnimationFrame(this.onFrame);
 		this.isPlaying = true;
+		document.getElementById('backgroundSong').volume = 0.5;
 	};
 
 	/**
