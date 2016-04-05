@@ -12,6 +12,7 @@ window.Game = (function() {
 		this.player = new window.Player(this.el.find('.Player'), this);
 		this.pipe = new window.Pipe(this.el, this);
 		this.isPlaying = false;
+		this.isAlive = false;
 
 		// Cache a bound onFrame since we need it each frame.
 		this.onFrame = this.onFrame.bind(this);
@@ -66,7 +67,7 @@ window.Game = (function() {
 	 */
 	Game.prototype.gameover = function() {
 		this.isPlaying = false;
-
+		this.reset();
 		// Should be refactored into a Scoreboard class.
 		var that = this;
 		var scoreboardEl = this.el.find('.Scoreboard');

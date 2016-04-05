@@ -13,6 +13,9 @@
 	background: url('../kimsmall.png'); /*url('http://s28.postimg.org/k90gybbtl/bird_Sprite.png');*/
 	animation: assFlap 0.2s steps(3, end) infinite alternate;
 	transition: transform 0.3s;
+	transform: translateZ(0);
+	-webkit-transform: translateZ(0);
+	-moz-transform: translateZ(0);
 }
 
 /*Færa þetta í scss skránna*/
@@ -32,15 +35,24 @@
 	background: #808080;
 	text-align: center;
 	border-radius: 15px;
+	-webkit-transform: translateZ(0);
+	transform: translateZ(0);
+	-moz-transform: translateZ(0);
 	-webkit-transform: translate(0, -40em);
+	transform: translate(0, -40em);
+	-moz-transform: translate(0, -40em);
 	-webkit-transition: -webkit-transform 0.5s;
+	transition: transform 0.5s;
+	-moz-transition: -moz-transform 0.5s;
 }
 
 /*
 * Reset transform to animate it into the correct spot on the screen.
 */
 .Scoreboard.is-visible {
+	transform: none;
 	-webkit-transform: none;
+	-moz-transform: none;
 }
 
 .Scoreboard-restart {
@@ -73,15 +85,13 @@ body {
 	left: 50%;
 	top: 50%;
 	width: 102.4em;
-	height: 56em;
+	height: 57.6em;
 	/*height: 45em;*/
 	margin-left: -51.2em;
 	margin-top: -28.8em;
 	overflow: hidden;
 	background: url('../images/dollars.jpg');
-	/*background: #d9ffb3;*/
 	z-index: 0;
-
 }
 
 .floor {
@@ -91,13 +101,17 @@ body {
    height: 20%;
    background-image: url('../images/floor.png');
    background-repeat: repeat-x;
-   background-position: 0px 0px;
-   background-color: #ded895;
+   background-position: bottom;
+   background-color: #8F8F8F;
 	 border-bottom-right-radius: 1.5em;
 	 border-bottom-left-radius: 1.5em;
    -webkit-animation: moveFloor 2516ms linear infinite;
+	 -moz-animation: moveFloor 2516ms linear infinite;
+	 animation: moveFloor 2516ms linear infinite;
    animation: moveFloor 2516ms linear infinite;
-	 /*translateZ á animationið*/
+	 -webkit-transform: translateZ(0);
+	 -moz-transform: translateZ(0);
+	 transform: translateZ(0);
 }
 
 .pipeTop1 {
@@ -106,13 +120,14 @@ body {
   bottom: 0;
   right: 0;
   width: 9em;
-  height: 65em;
 	background-position:top;
 
   background-image: url('../images/kmin-topdown.png');
 	background-size: 9em;
   background-repeat: no-repeat, repeat-y;
-  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+	transform: translateZ(0);
+	-moz-transform: translateZ(0);
 }
 
 .pipeBottom1 {
@@ -121,12 +136,13 @@ body {
   bottom: 0;
   right: 0;
   width: 9em;
-  height: 28em;
 
   background-image: url('../images/kmin.png');
 	background-size: 9em;
   background-repeat: no-repeat, repeat-y;
-  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+	-moz-transform: translateZ(0);
+	transform: translateZ(0);
 }
 
 .pipeTop2 {
@@ -134,13 +150,14 @@ body {
   bottom: 0;
   right: 0;
   width: 9em;
-  height: 70em;
 	background-position:top;
 
   background-image: url('../images/kmin-topdown.png');
 	background-size: 9em;
   background-repeat: no-repeat, repeat-y;
-  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+	-moz-transform: translateZ(0);
+	transform: translateZ(0);
 }
 
 .pipeBottom2 {
@@ -148,11 +165,12 @@ body {
 	bottom: 0;
 	right: 0;
 	width: 9em;
-	height: 33em;
 
 	background-image: url('../images/kmin.png');
 	background-size: 9em;
 	background-repeat: no-repeat, repeat-y;
+	-webkit-transform: translateZ(0);
+	-moz-transform: translateZ(0);
 	transform: translateZ(0);
 }
 
@@ -161,12 +179,13 @@ body {
 	bottom: 0;
 	right: 0;
 	width: 9em;
-	height: 60em;
 	background-position: top;
 
 	background-image: url('../images/kmin-topdown.png');
 	background-size: 9em;
 	background-repeat: no-repeat, repeat-y;
+	-webkit-transform: translateZ(0);
+	-moz-transform: translateZ(0);
 	transform: translateZ(0);
 }
 .pipeBottom3 {
@@ -174,11 +193,12 @@ body {
 	bottom: 0;
 	right: 0;
 	width: 9em;
-	height: 23em;
 
 	background-image: url('../images/kmin.png');
 	background-size: 9em;
 	background-repeat: no-repeat, repeat-y;
+	-webkit-transform: translateZ(0);
+	-moz-transform: translateZ(0);
 	transform: translateZ(0);
 }
 
@@ -212,6 +232,9 @@ body {
 	position: absolute;
 	background-repeat: no-repeat;
 	background-image: url('../images/sprinkle1.png');
+	-webkit-transform: translateZ(0);
+	-moz-transform: translateZ(0);
+	transform: translateZ(0);
 
 }
 .sprinkle1 {
@@ -243,5 +266,4 @@ body {
 @-webkit-keyframes moveSprinkles2 {
   0% {left: -940px;}
   100% {left: 940px;}
-
 }
