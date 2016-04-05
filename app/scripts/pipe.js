@@ -1,8 +1,11 @@
 window.Pipe = (function() {
   'use strict';
 
+  var SPEED = 20;
+  var GAP = 37;
+  var MAX = 75;
+  var MIN = 57;
 
-  var SPEED = 30;
   var PipeElement = function(pipe, posX, posY) {
     this.pipe = pipe;
     this.pos = {x: posX, y: posY};
@@ -19,7 +22,7 @@ window.Pipe = (function() {
   };
 
   Pipe.prototype.reset = function() {
-
+    //reset pipes
   };
 
   Pipe.prototype.onFrame = function(delta) {
@@ -27,25 +30,23 @@ window.Pipe = (function() {
     for(var i = 0; i< this.pipes.length; i++) {
       this.pipes[i].top.pos.x -= delta * SPEED;
       this.pipes[i].bottom.pos.x -= delta * SPEED;
-
       this.pipes[i].top.pipe.css('transform', 'translateZ(0) translateX(' + this.pipes[i].top.pos.x + 'em');
       this.pipes[i].bottom.pipe.css('transform', 'translateZ(0) translateX(' + this.pipes[i].bottom.pos.x + 'em');
 
       if(this.pipes[i].top.pos.x < -this.game.WORLD_WIDTH) {
         this.pipes[i].top.pos.x = 50;
         this.pipes[i].bottom.pos.x = 50;
-        var height = getRandomInt(57, 75);
-        console.log(height);
-        var upperHeight = (height - 37);
+        var height = Math.floor(Math.random() * (MAX - MIN + 1)) + MIN;
+        var bottomHeight = (height - GAP);
         this.pipes[i].top.pipe.css('height', height + 'em');
-        this.pipes[i].bottom.pipe.css('height', upperHeight + 'em');
+        this.pipes[i].bottom.pipe.css('height', bottomHeight + 'em');
       }
     }
   };
 
-  var getRandomInt = function (min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-  };
+  // var getRandomInt = function (min, max) {
+  //   return Math.floor(Math.random() * (max - min + 1)) + min;
+  // };
 
   return Pipe;
 })();

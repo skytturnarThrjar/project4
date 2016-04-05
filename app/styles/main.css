@@ -12,7 +12,7 @@
 	height: 3.8em;
 	background: url('../kimsmall.png'); /*url('http://s28.postimg.org/k90gybbtl/bird_Sprite.png');*/
 	animation: assFlap 0.2s steps(3, end) infinite alternate;
-	xtransition: transform 0.3s;
+	transition: transform 0.3s;
 }
 
 /*Færa þetta í scss skránna*/
@@ -31,7 +31,7 @@
 	box-sizing: border-box;
 	background: #808080;
 	text-align: center;
-	border-radius: 1.5em;
+	border-radius: 15px;
 	-webkit-transform: translate(0, -40em);
 	-webkit-transition: -webkit-transform 0.5s;
 }
@@ -48,7 +48,7 @@
 	font-size: inherit;
 	padding: 0.4em 1.5em;
 	border: 0.2em solid black;
-	border-radius: 1.5em;
+	border-radius: 15px;
 	background: none;
 	cursor: pointer;
 }
@@ -69,7 +69,7 @@ body {
 .GameCanvas {
 	font-size: 10px;
 	position: absolute;
-	border-radius: 1.5em;
+	border-radius: 15px;
 	left: 50%;
 	top: 50%;
 	width: 102.4em;
@@ -91,22 +91,14 @@ body {
    height: 20%;
    background-image: url('../images/floor.png');
    background-repeat: repeat-x;
-   background-position: 0em 0em;
+   background-position: 0px 0px;
    background-color: #ded895;
 	 border-bottom-right-radius: 1.5em;
 	 border-bottom-left-radius: 1.5em;
    -webkit-animation: moveFloor 2516ms linear infinite;
    animation: moveFloor 2516ms linear infinite;
+	 /*translateZ á animationið*/
 }
-
-/*.pipe {
-   position: absolute;
-   bottom: 0;
-   width: 10.9em;
-   height: 35em;
-   background-image: url('../images/kmin.png');
-   background-position: 0px 0px;
-}*/
 
 .pipeTop1 {
 
@@ -191,14 +183,14 @@ body {
 }
 
 @keyframes moveFloor {
-   0% { background-position: 0em 0em; }
-   100% { background-position: -33.5em 0em; }
+   0% { background-position: 0px 0px; }
+   100% { background-position: -335px 0px; }
 }
 
 /*				sprinkles 			*/
 
 #sprinkles {
-  top: -1em;
+  top: -10px;
   position: relative;
   -webkit-animation: moveSprinkles 15s infinite linear;
   -moz-animation: moveSprinkles 15s infinite linear;
@@ -215,40 +207,41 @@ body {
 }
 
 .sprinkles{
-	width: 6em;
-	height: 6em;
+	width: 60px;
+	height: 60px;
 	position: absolute;
 	background-repeat: no-repeat;
 	background-image: url('../images/sprinkle1.png');
 
 }
 .sprinkle1 {
-	left: 40em;
-  top: 2em
-	background-size: 4em 4em;
+	left: 400px;
+  top: 20px;
+	background-size: 40px 40px;
 }
 
 .sprinkle2 {
-	background-size: 5.5em 5.5em;
+	left: 0px;
+	background-size: 55px 55px;
 }
 
 .sprinkle3 {
-	left: 70em;
-  top: 1em;
-	background-size: 2.5em 2.5em;
+	left: 700px;
+  top: 10px;
+	background-size: 25px 25px;
 }
 
 @-webkit-keyframes moveSprinkles {
-  0% {left: 0em;}
-  49% {left: -94em; opacity: 1;}
-  50% {left: -94em; opacity: 0;}
-  51% {left: 94em; opacity: 0;}
-  52% {left: 94em; opacity: 1;}
-  100% {left: 0em;}
+  0% {left: 0px;}
+  49% {left: 940px; opacity: 1;}
+  50% {left: 940px; opacity: 0;}
+  51% {left: -940px; opacity: 0;}
+  52% {left: -940px; opacity: 1;}
+  100% {left: 0px;}
 }
 
 @-webkit-keyframes moveSprinkles2 {
-  0% {left: 94em;}
-  100% {left: -94em;}
+  0% {left: -940px;}
+  100% {left: 940px;}
 
 }
