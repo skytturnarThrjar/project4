@@ -80,16 +80,8 @@ body {
 	overflow: hidden;
 	background: url('../images/dollars.jpg');
 	/*background: #d9ffb3;*/
-}
+	z-index: 0;
 
-.cloud1 {
-	position: absolute;
-	width: 10em;
-	height: 10em;
-	background-image: url('../images/sky1');
-
-	-webkit-animation: moveCloud 2516ms linear infinite;
-	animation: moveCloud 2516ms linear infinite;
 }
 
 .floor {
@@ -198,12 +190,66 @@ body {
 	transform: translateZ(0);
 }
 
-@keyframes moveCloud {
-	0% {background-position: 0px 0px;}
-	100% {background-position: -200px 0px;}
-}
-
 @keyframes moveFloor {
    0% { background-position: 0px 0px; }
    100% { background-position: -335px 0px; }
+}
+
+/*				sprinkles 			*/
+
+#sprinkles {
+  top: -10px;
+  position: relative;
+  -webkit-animation: moveSprinkles 15s infinite linear;
+  -moz-animation: moveSprinkles 15s infinite linear;
+  -ms-animation: moveSprinkles 15s infinite linear;
+  z-index: -1;
+}
+
+#sprinkles2 {
+  position: relative;
+  -webkit-animation: moveSprinkles2 25s infinite linear;
+  -moz-animation: moveSprinkles2 25s infinite linear;
+  -ms-animation: moveSprinkles2 25s infinite linear;
+  z-index: -1;
+}
+
+.sprinkles{
+	width: 60px;
+	height: 60px;
+	position: absolute;
+	background-repeat: no-repeat;
+	background-image: url('../images/sprinkle1.png');
+
+}
+.sprinkle1 {
+	left: 400px;
+  top: 20px;
+	background-size: 40px 40px;
+}
+
+.sprinkle2 {
+	left: 0px;
+	background-size: 55px 55px;
+}
+
+.sprinkle3 {
+	left: 700px;
+  top: 10px;
+	background-size: 25px 25px;
+}
+
+@-webkit-keyframes moveSprinkles {
+  0% {left: 0px;}
+  49% {left: 940px; opacity: 1;}
+  50% {left: 940px; opacity: 0;}
+  51% {left: -940px; opacity: 0;}
+  52% {left: -940px; opacity: 1;}
+  100% {left: 0px;}
+}
+
+@-webkit-keyframes moveSprinkles2 {
+  0% {left: -940px;}
+  100% {left: 940px;}
+
 }
