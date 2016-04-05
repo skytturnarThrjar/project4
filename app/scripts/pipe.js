@@ -34,12 +34,17 @@ window.Pipe = (function() {
       if(this.pipes[i].top.pos.x < -this.game.WORLD_WIDTH) {
         this.pipes[i].top.pos.x = 50;
         this.pipes[i].bottom.pos.x = 50;
-        var height = 35;
-        var upperHeight = this.game.WORLD_HEIGHT - (height + 15);
-        this.pipes[i].top.pipe.css('height' + height + 'em');
-        this.pipes[i].bottom.pipe.css('height' + upperHeight + 'em');
+        var height = getRandomInt(57, 75);
+        console.log(height);
+        var upperHeight = (height - 37);
+        this.pipes[i].top.pipe.css('height', height + 'em');
+        this.pipes[i].bottom.pipe.css('height', upperHeight + 'em');
       }
     }
+  };
+
+  var getRandomInt = function (min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
   };
 
   return Pipe;

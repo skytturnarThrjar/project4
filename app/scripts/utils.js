@@ -31,6 +31,17 @@ var mute = function() {
     document.getElementById('yoSound').className = 'on';
     document.getElementById('laugh').className = 'on';
   }
-
-
 };
+
+var changeImage = function() {
+  'use strict';
+  var imageClass = document.getElementById('muteImage').className;
+  if(imageClass === 'on') {
+    document.getElementById('muteImage').className = 'off';
+    document.getElementById('muteImage').src = '/images/volumeMute.png';
+  }
+  else if(imageClass === 'off') {
+    document.getElementById('muteImage').className = 'on';
+    document.getElementById('muteImage').src = '/images/volume.png';
+  }
+}

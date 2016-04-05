@@ -10,6 +10,7 @@ window.Player = (function() {
 	var HEIGHT = 5;
 	var INITIAL_POSITION_X = 30;
 	var INITIAL_POSITION_Y = 25;
+	var ROTATE = 0;
 
 	var Player = function(el, game) {
 		this.el = el;
@@ -27,9 +28,11 @@ window.Player = (function() {
 
 	Player.prototype.onFrame = function(delta) {
 		if (!Controls.keys.space) {
+			ROTATE = -20;
 			this.pos.y += delta * SPEED;
 		}
 		if (Controls.keys.space) {
+			ROTATE = 100;
 			if(document.getElementById('yoSound').className === 'on') {
 				document.getElementById('yoSound').play();
 			}
@@ -39,7 +42,11 @@ window.Player = (function() {
 		this.checkCollisionWithBounds();
 
 		// Update UI
-		this.el.css('transform', 'translate(' + this.pos.x + 'em, ' + this.pos.y + 'em)');
+		this.el.css('transform', 'translate3d(' + this.pos.x + 'em, ' + this.pos.y + 'em, ' + 0 + 'em)' + 'rotate(' + ROTATE + 'deg)');
+	};
+
+	Player.prototype.checkCollisionWithPipes = function() {
+
 	};
 
 	Player.prototype.checkCollisionWithBounds = function() {

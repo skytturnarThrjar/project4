@@ -12,7 +12,7 @@
 	height: 3.8em;
 	background: url('../kimsmall.png'); /*url('http://s28.postimg.org/k90gybbtl/bird_Sprite.png');*/
 	animation: assFlap 0.2s steps(3, end) infinite alternate;
-	transition: transform 0.3s;
+	xtransition: transform 0.3s;
 }
 
 /*Færa þetta í scss skránna*/
@@ -116,33 +116,87 @@ body {
    background-position: 0px 0px;
 }*/
 
-.pipeTop1, .pipeTop2, .pipeTop3 {
+.pipeTop1 {
 
   position: absolute;
   bottom: 0;
   right: 0;
   width: 9em;
-  height: 60em;
+  height: 65em;
 	background-position:top;
 
   background-image: url('../images/kmin-topdown.png');
+	background-size: 9em;
   background-repeat: no-repeat, repeat-y;
   transform: translateZ(0);
 }
 
-.pipeBottom1, .pipeBottom2, .pipeBottom3 {
+.pipeBottom1 {
 
   position: absolute;
   bottom: 0;
   right: 0;
   width: 9em;
-  height: 30em;
+  height: 28em;
 
   background-image: url('../images/kmin.png');
+	background-size: 9em;
   background-repeat: no-repeat, repeat-y;
   transform: translateZ(0);
 }
 
+.pipeTop2 {
+	position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 9em;
+  height: 70em;
+	background-position:top;
+
+  background-image: url('../images/kmin-topdown.png');
+	background-size: 9em;
+  background-repeat: no-repeat, repeat-y;
+  transform: translateZ(0);
+}
+
+.pipeBottom2 {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	width: 9em;
+	height: 33em;
+
+	background-image: url('../images/kmin.png');
+	background-size: 9em;
+	background-repeat: no-repeat, repeat-y;
+	transform: translateZ(0);
+}
+
+.pipeTop3 {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	width: 9em;
+	height: 60em;
+	background-position: top;
+
+	background-image: url('../images/kmin-topdown.png');
+	background-size: 9em;
+	background-repeat: no-repeat, repeat-y;
+	transform: translateZ(0);
+}
+.pipeBottom3 {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	width: 9em;
+	height: 23em;
+
+	background-image: url('../images/kmin.png');
+	background-size: 9em;
+	background-repeat: no-repeat, repeat-y;
+	transform: translateZ(0);
+}
 
 @keyframes moveCloud {
 	0% {background-position: 0px 0px;}

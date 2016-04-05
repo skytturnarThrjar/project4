@@ -25,7 +25,7 @@
         <![endif]-->
 
         <div class="GameCanvas">
-            <img id="myImage" onclick="mute()" src="/images/volume.png">
+            <img id="muteImage" onclick="mute(); changeImage()" src="/images/volume.png" class="on">
             <audio src="/audio/wigglesong.mp3" preload autoplay loop id="backgroundSong" class="on"></audio>
             <audio src="/audio/yo.mp3" preload id="yoSound" class="on"></audio>
             <audio src="/audio/laugh.wav" preload id="laugh" class="off"></audio>
