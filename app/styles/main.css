@@ -11,6 +11,7 @@
 	width: 4em;
 	height: 3.8em;
 	background: url('../kimsmall.png'); /*url('http://s28.postimg.org/k90gybbtl/bird_Sprite.png');*/
+	background-size: 4em 11.7em;
 	animation: assFlap 0.2s steps(3, end) infinite alternate;
 	xtransition: transform 0.3s;
 }
@@ -66,6 +67,20 @@ body {
 	color: #000;
 	padding: 0.2em 0;
 }
+
+@media all and (max-width: 768px) {
+	.GameCanvas
+	{
+		font-size: 5px !important;
+	}
+}
+@media all and (max-width: 375px) {
+	.GameCanvas
+	{
+		font-size:3.5px !important;
+	}
+}
+
 .GameCanvas {
 	font-size: 10px;
 	position: absolute;
@@ -81,7 +96,6 @@ body {
 	background: url('../images/dollars.jpg');
 	/*background: #d9ffb3;*/
 	z-index: 0;
-
 }
 
 .floor {
@@ -250,5 +264,9 @@ body {
 @-webkit-keyframes moveSprinkles2 {
   0% {left: 94em;}
   100% {left: -94em;}
+}
 
+#muteImage{
+	width: 5.6em;
+	height:5.6em;
 }
