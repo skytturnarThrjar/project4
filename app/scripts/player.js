@@ -11,6 +11,7 @@ window.Player = (function() {
 	var INITIAL_POSITION_X = 30;
 	var INITIAL_POSITION_Y = 25;
 	var ROTATE = 0;
+	var PIPEWIDTH = 9;
 
 	var Player = function(el, game) {
 		this.el = el;
@@ -27,37 +28,62 @@ window.Player = (function() {
 	};
 
 	Player.prototype.onFrame = function(delta) {
-		if (!Controls.keys.space) {
-			ROTATE = -20;
-			this.pos.y += delta * SPEED;
-		}
+		// if(gameover) {
+		//
+		// }
+		// if (!Controls.keys.space) {
+		// 	ROTATE = -20;
+		// 	this.pos.y += delta * SPEED;
+		// }
 		if (Controls.keys.space) {
+			this.game.isAlive = true;
 			ROTATE = 100;
 			if(document.getElementById('yoSound').className === 'on') {
 				document.getElementById('yoSound').play();
 			}
 			this.pos.y -= delta * SPEED;
 		}
+		else if (this.game.isAlive) {
+			ROTATE = -20;
+			this.pos.y += delta * SPEED;
+		}
 
+		this.checkCollisionWithPipes();
 		this.checkCollisionWithBounds();
 
 		// Update UI
 		this.el.css('transform', 'translate3d(' + this.pos.x + 'em, ' + this.pos.y + 'em, ' + 0 + 'em)' + 'rotate(' + ROTATE + 'deg)');
+		this.el.css('-webkit-transform', 'translate3d(' + this.pos.x + 'em, ' + this.pos.y + 'em, ' + 0 + 'em)' + 'rotate(' + ROTATE + 'deg)');
+		this.el.css('-moz-transform', 'translate3d(' + this.pos.x + 'em, ' + this.pos.y + 'em, ' + 0 + 'em)' + 'rotate(' + ROTATE + 'deg)');
 	};
 
 	Player.prototype.checkCollisionWithPipes = function() {
+		for(var i = 0; i < this.game.pipe.pipes.length; i++) {
+			var pipeX = this.game.pipe.pipes[i].top.pos.x;
+			var pipeTopY = this.game.pipe.pipes[i].top.pos.y + this.game.pipe.pipes[i].top.pipe[0].style.height;
+			var pipeBottomY = this.game.pipe.pipes[i].bottom.pos.y + this.game.pipe.pipes[i].bottom.pipe[0].style.height;
+			pipeTopY = pipeTopY.substring(0, pipeTopY.length - 2);
+			pipeBottomY = pipeBottomY.substring(0, pipeBottomY.length - 2);
 
+
+			if(pipeX >= this.pos.x + WIDTH && pipeX < this.pos.x + WIDTH + PIPEWIDTH) {
+				if(this.pos.y < pipeTopY && this.pos.y + HEIGHT > pipeBottomY) {
+					//return this.game.gameover();
+				}
+				else {
+					console.log('LIFA');
+				}
+			}
+		}
 	};
 
 	Player.prototype.checkCollisionWithBounds = function() {
-		if (this.pos.x < 0 ||
-			this.pos.x + WIDTH > this.game.WORLD_WIDTH ||
-			this.pos.y < 0 ||
-			this.pos.y + HEIGHT > this.game.WORLD_HEIGHT) {
-				if(document.getElementById('laugh').className === 'on') {
-					document.getElementById('laugh').play();
-				}
-				return this.game.gameover();
+		if (this.pos.y + HEIGHT > this.game.WORLD_HEIGHT) {
+			this.game.isAlive = false;
+			if(document.getElementById('laugh').className === 'on') {
+				document.getElementById('laugh').play();
+			}
+			return this.game.gameover();
 		}
 	};
 
