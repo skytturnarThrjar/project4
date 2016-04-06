@@ -64,7 +64,7 @@ window.Player = (function() {
 			//console.log(pipeX);
 			var help = this.game.pipe.pipes[i].top.pipe[0].style.height;
 			help = help.substring(0, help.length - 2);
-			var pipeTopY = this.game.pipe.pipes[i].top.pos.y + parseInt(help);
+			var pipeTopY = this.game.pipe.pipes[i].top.pos.y; // + parseInt(help);
 
 
 			var help2 = this.game.pipe.pipes[i].bottom.pipe[0].style.height;
@@ -89,12 +89,25 @@ window.Player = (function() {
 					// console.log(pipeBottomY > Math.floor(this.pos.y) < pipeTopY);
 
 					console.log('pipeTopY ' + pipeTopY);
-
 					console.log('pipeBottomY ' + pipeBottomY);
+
 					console.log(' Math.floor(this.pos.y)' +  Math.floor(this.pos.y));
 					console.log('pipeBottomY < Math.floor(this.pos.y) && Math.floor(this.pos.y) < pipeTopY' + pipeBottomY < Math.floor(this.pos.y) && Math.floor(this.pos.y) < pipeTopY);
-					if( pipeBottomY < Math.floor(this.pos.y) && Math.floor(this.pos.y) < pipeTopY)
+
+					if( pipeBottomY < Math.floor(this.pos.y)+HEIGHT && Math.floor(this.pos.y) < pipeTopY)
 					{
+						console.log('DIEDIE');
+							console.log(Math.floor(this.pos.y));
+							// if( pipeBottomY < Math.floor(this.pos.y) && pipeTopY >  Math.floor(this.pos.y))
+							// {
+							// 		this.game.score ++;
+							// 		console.log('SCORE' + this.game.score);
+							// }
+							// else {
+							// 	console.log('bam');
+							//
+							// 	return this.game.gameover();
+							// }
 					}
 					else {
 						console.log('bam');
@@ -103,20 +116,8 @@ window.Player = (function() {
 
 					}
 
-					if(-this.pos.x + WIDTH -35 >= pipeX && -this.pos.x - 35 < pipeX + PIPEWIDTH){
-						console.log('DIEDIE');
-							console.log(Math.floor(this.pos.y));
-							if( pipeBottomY < Math.floor(this.pos.y) && pipeTopY >  Math.floor(this.pos.y))
-							{
 
 
-							}
-							else {
-								console.log('bam');
-
-								return this.game.gameover();
-							}
-						}
 				// if(Math.floor(this.pos.y) < pipeTopY && Math.floor(this.pos.y) + HEIGHT > pipeBottomY ) {
 				// 	console.log('LIFA');
 				// }
