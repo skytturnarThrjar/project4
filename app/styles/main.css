@@ -64,11 +64,11 @@
 	padding: 0.4em 1.5em;
 	border: 0em solid black;
 	border-radius: 15px;
-	background: none;
+	background: rgb(235, 178, 9);
 	cursor: pointer;
 }
 .Scoreboard-restartText {
-	font-family: 'Comic Sans MS', serif;
+	font-family: 'Calibri', serif;
 	font-size: 2.4em;
 	color: black;
 }

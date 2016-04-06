@@ -62,17 +62,36 @@ window.Player = (function() {
 			var pipeX = this.game.pipe.pipes[i].top.pos.x;
 			var pipeTopY = this.game.pipe.pipes[i].top.pos.y + this.game.pipe.pipes[i].top.pipe[0].style.height;
 			var pipeBottomY = this.game.pipe.pipes[i].bottom.pos.y + this.game.pipe.pipes[i].bottom.pipe[0].style.height;
-			pipeTopY = pipeTopY.substring(0, pipeTopY.length - 2);
-			pipeBottomY = pipeBottomY.substring(0, pipeBottomY.length - 2);
+			pipeTopY = pipeTopY.substring(1, pipeTopY.length - 2);
+			pipeBottomY = pipeBottomY.substring(1, pipeBottomY.length - 2);
 
 
-			if(pipeX >= this.pos.x + WIDTH && pipeX < this.pos.x + WIDTH + PIPEWIDTH) {
-				if(this.pos.y < pipeTopY && this.pos.y + HEIGHT > pipeBottomY) {
-					//return this.game.gameover();
-				}
-				else {
+			// if(pipeX >= this.pos.x + WIDTH && pipeX < this.pos.x + WIDTH + PIPEWIDTH) {
+			//if(Math.floor(pipeX) < Math.floor(this.pos.x + WIDTH) && Math.floor(pipeX + PIPEWIDTH) < Math.floor(this.pos.x)) {
+			//if(pipeX >= this.pos.x + WIDTH && pipeX < this.pos.x + WIDTH + PIPEWIDTH){
+
+			if(-this.pos.x + WIDTH -35 >= pipeX && -this.pos.x - 35 < pipeX + PIPEWIDTH){
+				console.log('DIEDIE');
+
+
+				if(Math.floor(this.pos.y) < pipeTopY && Math.floor(this.pos.y) + HEIGHT > pipeBottomY ) {
 					console.log('LIFA');
 				}
+				else {
+					console.log(Math.floor(this.pos.y) + ' < ' + pipeTopY  );
+					console.log(Math.floor(this.pos.y) + HEIGHT + ' > ' + pipeBottomY);
+					console.log(pipeBottomY);
+
+					console.log('OKO');
+					console.log('KIM' + this.pos.y);
+					console.log(pipeTopY);
+					//console.log(this.pos.x + WIDTH);
+					console.log('XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXx');
+					return this.game.gameover();
+
+				}
+				// return this.game.gameover();
+
 			}
 		}
 	};
