@@ -28,11 +28,12 @@
 	position: absolute;
 	left: 50%;
 	top: 10em;
-	height: 30em;
-	width: 40em;
-	margin-left: -20em;
+	height: 30.5em;
+	width: 55.5em;
+	margin-left: -28em;
 	box-sizing: border-box;
 	background: #808080;
+	background-image: url('../crown.jpg');
 	text-align: center;
 	border-radius: 15px;
 	-webkit-transform: translateZ(0);
@@ -56,10 +57,10 @@
 }
 
 .Scoreboard-restart {
-	margin-top: 20em;
+	margin-top: 25em;
 	font-size: inherit;
 	padding: 0.4em 1.5em;
-	border: 0.2em solid black;
+	border: 0em solid black;
 	border-radius: 15px;
 	background: none;
 	cursor: pointer;
