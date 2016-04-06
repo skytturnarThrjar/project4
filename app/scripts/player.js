@@ -37,7 +37,7 @@ window.Player = (function() {
 		// }
 		if (Controls.keys.space) {
 			this.game.isAlive = true;
-			ROTATE = 100;
+			ROTATE = 70;
 			if(document.getElementById('yoSound').className === 'on') {
 				document.getElementById('yoSound').play();
 			}
@@ -52,9 +52,9 @@ window.Player = (function() {
 		this.checkCollisionWithBounds();
 
 		// Update UI
-		this.el.css('transform', 'translate3d(' + this.pos.x + 'em, ' + this.pos.y + 'em, ' + 0 + 'em)' + 'rotate(' + 0 + 'deg)');
-		this.el.css('-webkit-transform', 'translate3d(' + this.pos.x + 'em, ' + this.pos.y + 'em, ' + 0 + 'em)' + 'rotate(' + 0 + 'deg)');
-		this.el.css('-moz-transform', 'translate3d(' + this.pos.x + 'em, ' + this.pos.y + 'em, ' + 0 + 'em)' + 'rotate(' + 0 + 'deg)');
+		this.el.css('transform', 'translate3d(' + this.pos.x + 'em, ' + this.pos.y + 'em, ' + 0 + 'em)' + 'rotate(' + ROTATE + 'deg)');
+		this.el.css('-webkit-transform', 'translate3d(' + this.pos.x + 'em, ' + this.pos.y + 'em, ' + 0 + 'em)' + 'rotate(' + ROTATE + 'deg)');
+		this.el.css('-moz-transform', 'translate3d(' + this.pos.x + 'em, ' + this.pos.y + 'em, ' + 0 + 'em)' + 'rotate(' + ROTATE + 'deg)');
 	};
 
 	Player.prototype.checkCollisionWithPipes = function() {
@@ -70,22 +70,12 @@ window.Player = (function() {
 			var pipeBottomY = this.game.WORLD_HEIGHT - help2;//+ parseInt(help2);
 
 			if(-this.pos.x + WIDTH - 35 >= pipeX && -this.pos.x - 35 < pipeX + PIPEWIDTH){
-
-					console.log('pipeTopY ' + pipeTopY);
-					console.log('pipeBottomY ' + pipeBottomY);
-
-					console.log(' Math.floor(this.pos.y)' +  Math.floor(this.pos.y));
-					console.log('y + height:', this.pos.y + HEIGHT);
-					console.log('pipeBottomY < Math.floor(this.pos.y) && Math.floor(this.pos.y) < pipeTopY' + pipeBottomY < Math.floor(this.pos.y) && Math.floor(this.pos.y) < pipeTopY);
-
-					if(pipeBottomY + 5 <= this.pos.y + HEIGHT || this.pos.y  + 5 <= pipeTopY)
-					{
-							console.log('DIE');
-							return this.game.gameover();
-					}
-					else {
-						console.log('LIFA');
-					}
+				if(pipeBottomY + 3 <= this.pos.y + HEIGHT || this.pos.y  + 3 <= pipeTopY) {
+					return this.game.gameover();
+				}
+				else {
+							//telja stig
+				}
 			}
 		}
 	};

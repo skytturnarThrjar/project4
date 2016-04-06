@@ -69,13 +69,13 @@ window.Game = (function() {
 		this.isPlaying = false;
 		// Should be refactored into a Scoreboard class.
 		var that = this;
-		//that.pipe.reset();
 		var scoreboardEl = this.el.find('.Scoreboard');
 		scoreboardEl
 			.addClass('is-visible')
 			.find('.Scoreboard-restart')
 				.one('click', function() {
 					scoreboardEl.removeClass('is-visible');
+					that.pipe.reset();
 					that.start();
 				});
 	};
