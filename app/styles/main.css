@@ -35,6 +35,7 @@
 	box-sizing: border-box;
 	background: transparent;
 	background-image: url('../crown.png');
+	background-size:55.5em 30.5em ;
 	text-align: center;
 	border-radius: 15px;
 	-webkit-transform: translateZ(0);
@@ -240,34 +241,34 @@ body {
 
 }
 .sprinkle1 {
-	left: 400px;
-  top: 20px;
-	background-size: 40px 40px;
+	left: 40em;
+  top: 2em;
+	background-size: 4em 4em;
 }
 
 .sprinkle2 {
 	left: 0px;
-	background-size: 55px 55px;
+	background-size: 5.5em 5.5em;
 }
 
 .sprinkle3 {
-	left: 700px;
-  top: 10px;
-	background-size: 25px 25px;
+	left: 70em;
+  top: 1em;
+	background-size: 2.5em 2.5em;
 }
 
 @-webkit-keyframes moveSprinkles {
   0% {left: 0px;}
-  49% {left: -940px; opacity: 1;}
-  50% {left: -940px; opacity: 0;}
-  51% {left: 940px; opacity: 0;}
-  52% {left: 940px; opacity: 1;}
-  100% {left: 0px;}
+  49% {left: -94em; opacity: 1;}
+  50% {left: -94em; opacity: 0;}
+  51% {left: 94em; opacity: 0;}
+  52% {left: 94em; opacity: 1;}
+  100% {left: 0em;}
 }
 
 @-webkit-keyframes moveSprinkles2 {
-  0% {left: 940px;}
-  100% {left: -940px;}
+  0% {left: 94em;}
+  100% {left: -94em;}
 }
 
 #muteImage{
