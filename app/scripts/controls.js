@@ -30,12 +30,14 @@ window.Controls = (function() {
             .on('keydown', this._onKeyDown.bind(this))
             .on('keyup', this._onKeyUp.bind(this))
             .on('mousedown', this._onKeyDown.bind(this))
-            .on('mouseup', this._onKeyUp.bind(this));
+            .on('mouseup', this._onKeyUp.bind(this))
+            .on('touchstart', this._onKeyDown.bind(this))
+            .on('touchend', this._onKeyUp.bind(this));
     };
 
     Controls.prototype._onKeyDown = function(e) {
         // Only jump if space wasn't pressed.
-        if(e.type === 'mousedown') {
+        if(e.type === 'mousedown' || e.type === 'touchstart') {
             e.keyCode = 32;
         }
         if (e.keyCode === 32 && !this.keys.space) {
@@ -52,7 +54,7 @@ window.Controls = (function() {
 
 
     Controls.prototype._onKeyUp = function(e) {
-        if(e.type === 'mouseup') {
+        if(e.type === 'mouseup' || e.type === 'touchend') {
             e.keyCode = 32;
         }
         if (e.keyCode in KEYS) {
