@@ -36,18 +36,21 @@ window.Pipe = (function() {
                 this.pipes[i].top.pos.x = (this.game.WORLD_WIDTH / 2) * 2;
                 this.pipes[i].bottom.pos.x = (this.game.WORLD_WIDTH / 2) * 2;
             }
-            var height = Math.floor(Math.random() * (MAX - MIN + 1)) + MIN;
-            var bottomHeight = height - GAP;
-            this.pipes[i].top.pipe.css('height', height + 'em');
-            this.pipes[i].bottom.pipe.css('height', bottomHeight + 'em');
+            if(this.game.score === -1) {
+                var height = Math.floor(Math.random() * (MAX - MIN + 1)) + MIN;
+                var bottomHeight = height - GAP;
+                this.pipes[i].top.pipe.css('height', height + 'em');
+                this.pipes[i].bottom.pipe.css('height', bottomHeight + 'em');
+            }
             this.pipes[i].top.pipe.css('transform', 'translateZ(0) translateX(' + this.pipes[i].top.pos.x + 'em');
             this.pipes[i].bottom.pipe.css('transform', 'translateZ(0) translateX(' + this.pipes[i].bottom.pos.x + 'em');
             this.pipes[i].top.pipe.css('-webkit-transform', 'translateZ(0) translateX(' + this.pipes[i].top.pos.x + 'em');
             this.pipes[i].bottom.pipe.css('-webkit-transform', 'translateZ(0) translateX(' + this.pipes[i].bottom.pos.x + 'em');
             this.pipes[i].top.pipe.css('-moz-transform', 'translateZ(0) translateX(' + this.pipes[i].top.pos.x + 'em');
             this.pipes[i].bottom.pipe.css('-moz-transform', 'translateZ(0) translateX(' + this.pipes[i].bottom.pos.x + 'em');
-
         }
+
+        this.game.score = 0;
     };
 
     Pipe.prototype.onFrame = function(delta) {
