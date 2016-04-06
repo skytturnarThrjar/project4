@@ -28,13 +28,13 @@
 .Scoreboard {
 	position: absolute;
 	left: 50%;
-	top: 10em;
+	top: 9em;
 	height: 30.5em;
 	width: 55.5em;
 	margin-left: -28em;
 	box-sizing: border-box;
-	background: #808080;
-	background-image: url('../crown.jpg');
+	background: transparent;
+	background-image: url('../crown.png');
 	text-align: center;
 	border-radius: 15px;
 	-webkit-transform: translateZ(0);
@@ -258,16 +258,16 @@ body {
 
 @-webkit-keyframes moveSprinkles {
   0% {left: 0px;}
-  49% {left: 940px; opacity: 1;}
-  50% {left: 940px; opacity: 0;}
-  51% {left: -940px; opacity: 0;}
-  52% {left: -940px; opacity: 1;}
+  49% {left: -940px; opacity: 1;}
+  50% {left: -940px; opacity: 0;}
+  51% {left: 940px; opacity: 0;}
+  52% {left: 940px; opacity: 1;}
   100% {left: 0px;}
 }
 
 @-webkit-keyframes moveSprinkles2 {
-  0% {left: -940px;}
-  100% {left: 940px;}
+  0% {left: 940px;}
+  100% {left: -940px;}
 }
 
 #muteImage{
