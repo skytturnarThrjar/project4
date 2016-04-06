@@ -3,7 +3,7 @@ window.Pipe = (function() {
     'use strict';
 
     var SPEED = 20;
-    var GAP = 30;
+    var GAP = 25;
     var MAX = 34;
     var MIN = 9;
 
