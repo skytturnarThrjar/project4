@@ -60,17 +60,19 @@ window.Player = (function() {
 	Player.prototype.checkCollisionWithPipes = function() {
 		for(var i = 0; i < this.game.pipe.pipes.length; i++) {
 			var pipeX = Math.floor(this.game.pipe.pipes[i].top.pos.x);
+			//console.log('PipeX ' + pipeX);
 			//console.log(pipeX);
 			var help = this.game.pipe.pipes[i].top.pipe[0].style.height;
 			help = help.substring(0, help.length - 2);
 			var pipeTopY = this.game.pipe.pipes[i].top.pos.y + parseInt(help);
-			//console.log('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa');
-			//console.log(this.game.pipe.pipes[i].top.pos.y);
-			//console.log(parseInt(help));
-			//console.log(pipeTopY);
+
+
 			var help2 = this.game.pipe.pipes[i].bottom.pipe[0].style.height;
 			help2 = help2.substring(0, help2.length - 2);
+
 			var pipeBottomY = this.game.pipe.pipes[i].bottom.pos.y + parseInt(help2);
+
+
 
 
 
@@ -82,29 +84,58 @@ window.Player = (function() {
 			//if(Math.floor(pipeX) < Math.floor(this.pos.x + WIDTH) && Math.floor(pipeX + PIPEWIDTH) < Math.floor(this.pos.x)) {
 			//if(pipeX >= this.pos.x + WIDTH && pipeX < this.pos.x + WIDTH + PIPEWIDTH){
 
-			/*if(-this.pos.x + WIDTH -35 >= pipeX && -this.pos.x - 35 < pipeX + PIPEWIDTH){
+			if(-this.pos.x + WIDTH -35 >= pipeX && -this.pos.x - 35 < pipeX + PIPEWIDTH){
 				console.log('DIEDIE');
+					// console.log(pipeBottomY > Math.floor(this.pos.y) < pipeTopY);
+
+					console.log('pipeTopY ' + pipeTopY);
+
+					console.log('pipeBottomY ' + pipeBottomY);
+					console.log(' Math.floor(this.pos.y)' +  Math.floor(this.pos.y));
+					console.log('pipeBottomY < Math.floor(this.pos.y) && Math.floor(this.pos.y) < pipeTopY' + pipeBottomY < Math.floor(this.pos.y) && Math.floor(this.pos.y) < pipeTopY);
+					if( pipeBottomY < Math.floor(this.pos.y) && Math.floor(this.pos.y) < pipeTopY)
+					{
+					}
+					else {
+						console.log('bam');
+
+						return this.game.gameover();
+
+					}
+
+					if(-this.pos.x + WIDTH -35 >= pipeX && -this.pos.x - 35 < pipeX + PIPEWIDTH){
+						console.log('DIEDIE');
+							console.log(Math.floor(this.pos.y));
+							if( pipeBottomY < Math.floor(this.pos.y) && pipeTopY >  Math.floor(this.pos.y))
+							{
 
 
-				if(Math.floor(this.pos.y) < pipeTopY && Math.floor(this.pos.y) + HEIGHT > pipeBottomY ) {
-					console.log('LIFA');
-				}
-				else {
-					console.log(Math.floor(this.pos.y) + ' < ' + pipeTopY  );
-					console.log(Math.floor(this.pos.y) + HEIGHT + ' > ' + pipeBottomY);
-					console.log(pipeBottomY);
+							}
+							else {
+								console.log('bam');
 
-					console.log('OKO');
-					console.log('KIM' + this.pos.y);
-					console.log(pipeTopY);
-					//console.log(this.pos.x + WIDTH);
-					console.log('XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXx');
-					return this.game.gameover();
-
-				}
+								return this.game.gameover();
+							}
+						}
+				// if(Math.floor(this.pos.y) < pipeTopY && Math.floor(this.pos.y) + HEIGHT > pipeBottomY ) {
+				// 	console.log('LIFA');
+				// }
+				// else {
+				// 	console.log(Math.floor(this.pos.y) + ' < ' + pipeTopY  );
+				// 	console.log(Math.floor(this.pos.y) + HEIGHT + ' > ' + pipeBottomY);
+				// 	console.log(pipeBottomY);
+				//
+				// 	console.log('OKO');
+				// 	console.log('KIM' + this.pos.y);
+				// 	console.log(pipeTopY);
+				// 	//console.log(this.pos.x + WIDTH);
+				// 	console.log('XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXx');
+				// 	return this.game.gameover();
+				//
+				// }
 				// return this.game.gameover();
 
-			}*/
+			}
 		}
 	};
 
