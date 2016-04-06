@@ -69,7 +69,7 @@ window.Game = (function() {
 		this.isPlaying = false;
 		// Should be refactored into a Scoreboard class.
 		var that = this;
-		that.pipe.reset();
+		//that.pipe.reset();
 		var scoreboardEl = this.el.find('.Scoreboard');
 		scoreboardEl
 			.addClass('is-visible')

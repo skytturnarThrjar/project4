@@ -3,9 +3,9 @@ window.Pipe = (function() {
     'use strict';
 
     var SPEED = 20;
-    var GAP = 50;
-    var MAX = 75;
-    var MIN = 60;
+    var GAP = 30;
+    var MAX = 34;
+    var MIN = 9;
 
     var PipeElement = function(pipe, posX, posY) {
         this.pipe = pipe;
@@ -17,8 +17,8 @@ window.Pipe = (function() {
         this.game = game;
         this.pipes = [
             {id: 'firstPipe', top: new PipeElement(this.el.find('.pipeTop1'), this.game.WORLD_WIDTH , 0), bottom: new PipeElement(this.el.find('.pipeBottom1'), this.game.WORLD_WIDTH, 0)},
-            {id: 'secondPipe', top: new PipeElement(this.el.find('.pipeTop2'), this.game.WORLD_WIDTH * 1.5, 0), bottom: new PipeElement(this.el.find('.pipeBottom2'), this.game.WORLD_WIDTH / 2, 0)},
-            {id: 'thirdPipe', top: new PipeElement(this.el.find('.pipeTop3'), this.game.WORLD_WIDTH * 2, 0), bottom: new PipeElement(this.el.find('.pipeBottom3'), (this.game.WORLD_WIDTH / 2) * 2, 0)}
+            {id: 'secondPipe', top: new PipeElement(this.el.find('.pipeTop2'), this.game.WORLD_WIDTH * 1.5, 0), bottom: new PipeElement(this.el.find('.pipeBottom2'), this.game.WORLD_WIDTH * 1.5, 0)},
+            {id: 'thirdPipe', top: new PipeElement(this.el.find('.pipeTop3'), this.game.WORLD_WIDTH * 2, 0), bottom: new PipeElement(this.el.find('.pipeBottom3'), this.game.WORLD_WIDTH * 2, 0)}
         ];
     };
 
@@ -38,9 +38,10 @@ window.Pipe = (function() {
             }
             if(this.game.score === -1) {
                 var height = Math.floor(Math.random() * (MAX - MIN + 1)) + MIN;
-                var bottomHeight = height - GAP;
+                var bottomHeight = this.game.WORLD_HEIGHT - height - GAP;
                 this.pipes[i].top.pipe.css('height', height + 'em');
                 this.pipes[i].bottom.pipe.css('height', bottomHeight + 'em');
+                console.log('bottomheight:',bottomHeight);
             }
             this.pipes[i].top.pipe.css('transform', 'translateZ(0) translateX(' + this.pipes[i].top.pos.x + 'em');
             this.pipes[i].bottom.pipe.css('transform', 'translateZ(0) translateX(' + this.pipes[i].bottom.pos.x + 'em');
@@ -69,7 +70,8 @@ window.Pipe = (function() {
                     this.pipes[i].top.pos.x = this.game.WORLD_WIDTH/2;
                     this.pipes[i].bottom.pos.x = this.game.WORLD_WIDTH/2;
                     var height = Math.floor(Math.random() * (MAX - MIN + 1)) + MIN;
-                    var bottomHeight = (height - GAP);
+                    var bottomHeight = this.game.WORLD_HEIGHT - height - GAP;
+                    console.log('bottomheight:',bottomHeight);
                     this.pipes[i].top.pipe.css('height', height + 'em');
                     this.pipes[i].bottom.pipe.css('height', bottomHeight + 'em');
                 }

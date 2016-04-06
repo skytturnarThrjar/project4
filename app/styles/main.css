@@ -118,15 +118,13 @@ body {
 }
 
 .pipeTop1 {
-
   position: absolute;
-  bottom: 0;
   right: 0;
-  width: 9em;
-	background-position:top;
+  width: 10.8em;
+	top: 0;
 
   background-image: url('../images/kmin-topdown.png');
-	background-size: 9em;
+	background-size: 100%;
   background-repeat: no-repeat, repeat-y;
   -webkit-transform: translateZ(0);
 	transform: translateZ(0);
@@ -134,14 +132,13 @@ body {
 }
 
 .pipeBottom1 {
-
   position: absolute;
   bottom: 0;
   right: 0;
-  width: 9em;
+  width: 10.8em;
 
   background-image: url('../images/kmin.png');
-	background-size: 9em;
+	background-size: 100%;
   background-repeat: no-repeat, repeat-y;
   -webkit-transform: translateZ(0);
 	-moz-transform: translateZ(0);
@@ -150,13 +147,11 @@ body {
 
 .pipeTop2 {
 	position: absolute;
-  bottom: 0;
   right: 0;
-  width: 9em;
-	background-position:top;
-
+  width: 10.8em;
+	top: 0;
   background-image: url('../images/kmin-topdown.png');
-	background-size: 9em;
+	background-size: 100%;
   background-repeat: no-repeat, repeat-y;
   -webkit-transform: translateZ(0);
 	-moz-transform: translateZ(0);
@@ -167,10 +162,10 @@ body {
 	position: absolute;
 	bottom: 0;
 	right: 0;
-	width: 9em;
+	width: 10.8em;
 
 	background-image: url('../images/kmin.png');
-	background-size: 9em;
+	background-size: 100%;
 	background-repeat: no-repeat, repeat-y;
 	-webkit-transform: translateZ(0);
 	-moz-transform: translateZ(0);
@@ -179,13 +174,12 @@ body {
 
 .pipeTop3 {
 	position: absolute;
-	bottom: 0;
 	right: 0;
 	width: 9em;
-	background-position: top;
+	top: 0;
 
 	background-image: url('../images/kmin-topdown.png');
-	background-size: 9em;
+	background-size: 100%;
 	background-repeat: no-repeat, repeat-y;
 	-webkit-transform: translateZ(0);
 	-moz-transform: translateZ(0);
@@ -195,10 +189,10 @@ body {
 	position: absolute;
 	bottom: 0;
 	right: 0;
-	width: 9em;
+	width: 10.8em;
 
 	background-image: url('../images/kmin.png');
-	background-size: 9em;
+	background-size: 100%;
 	background-repeat: no-repeat, repeat-y;
 	-webkit-transform: translateZ(0);
 	-moz-transform: translateZ(0);
