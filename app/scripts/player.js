@@ -60,7 +60,7 @@ window.Player = (function() {
 			var heightBottom = this.game.pipe.pipes[i].bottom.pipe[0].style.height;
 			heightBottom = parseFloat(heightBottom);
 
-			var pipeBottomY = this.game.WORLD_HEIGHT - heightBottom;//+ parseInt(help2);
+			var pipeBottomY = this.game.WORLD_HEIGHT - heightBottom;
 
 			if(-this.pos.x + WIDTH - 35 >= pipeX && -this.pos.x - 35 < pipeX + PIPEWIDTH){
 				if(pipeBottomY + 4 <= this.pos.y + HEIGHT || this.pos.y  + 3 <= pipeTopY) {
@@ -71,7 +71,7 @@ window.Player = (function() {
 			else if(pipeX + PIPEWIDTH >= -68 && pipeX + PIPEWIDTH <= -67) {
 				if(this.game.currentPipe !== this.game.pipe.pipes[i].id){
 					this.game.score++;
-					console.log(this.game.score);
+					document.getElementById('chiching').play();
 					this.game.currentPipe = this.game.pipe.pipes[i].id;
 				}
 			}
@@ -79,9 +79,9 @@ window.Player = (function() {
 	};
 
 	Player.prototype.checkCollisionWithBounds = function() {
-		console.log(this.game.WORLD_HEIGHT + this.game.WORLD_HEIGHT*0.5);
+		console.log(this.game.WORLD_HEIGHT + this.game.WORLD_HEIGHT * 0.5);
 		console.log(this.pos.Y + WIDTH);
-		if (this.pos.y + HEIGHT > this.game.WORLD_HEIGHT - this.game.WORLD_HEIGHT*0.09) {
+		if (this.pos.y + HEIGHT > this.game.WORLD_HEIGHT - this.game.WORLD_HEIGHT * 0.09) {
 			this.game.isAlive = false;
 			return this.game.gameover();
 		}

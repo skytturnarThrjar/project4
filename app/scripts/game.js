@@ -54,6 +54,7 @@ window.Game = (function() {
 		this.currentPipe = 0;
 		document.getElementById('backgroundSong').volume = 0.5;
 		document.getElementById('backgroundSong').play();
+
 		this.reset();
 	};
 

@@ -1,17 +1,10 @@
 .Player {
-    /*position: absolute;
-	top: 0;
-	left: 0;
-	width: 5em;
-	height: 5em;
-	background: #ffff00;*/
     position: absolute;
     top: 0;
     left: 0;
     width: 4em;
     height: 3.8em;
     background: url('../kimsmall.png');
-    /*url('http://s28.postimg.org/k90gybbtl/bird_Sprite.png');*/
     background-size: 4em 11.7em;
     animation: assFlap 0.2s steps(3, end) infinite alternate;
     transition: transform 0.3s;
@@ -19,6 +12,7 @@
     -webkit-transform: translateZ(0);
     -moz-transform: translateZ(0);
 }
+
 #start {
     position: absolute;
     font-size: 0.8em;
@@ -27,8 +21,6 @@
     margin-left: 1em;
 
 }
-
-/*Færa þetta í scss skránna*/
 
 @keyframes assFlap {
     0% {
@@ -47,7 +39,6 @@
     margin-left: -28em;
     box-sizing: border-box;
     background: transparent;
-    /*background-image: url('../crown.png');*/
     background-size: 55.5em 30.5em;
 		background-color:rgb(57, 57, 57);
     text-align: center;
@@ -140,11 +131,11 @@ body {
     -webkit-animation: moveFloor 2516ms linear infinite;
     -moz-animation: moveFloor 2516ms linear infinite;
     animation: moveFloor 2516ms linear infinite;
-    animation: moveFloor 2516ms linear infinite;
     -webkit-transform: translateZ(0);
     -moz-transform: translateZ(0);
     transform: translateZ(0);
 }
+
 .pipeTop1 {
     position: absolute;
     right: 0;

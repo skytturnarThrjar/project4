@@ -24,6 +24,7 @@ var mute = function() {
         document.getElementById('backgroundSong').className = 'off';
         document.getElementById('yoSound').className = 'off';
         document.getElementById('laugh').className = 'off';
+        document.getElementById('chiching').className = 'off';
     }
     else if(audioClass === 'off') {
         document.getElementById('backgroundSong').play();
@@ -31,6 +32,7 @@ var mute = function() {
         document.getElementById('backgroundSong').className = 'on';
         document.getElementById('yoSound').className = 'on';
         document.getElementById('laugh').className = 'on';
+        document.getElementById('chiching').className = 'on';
     }
 };
 
