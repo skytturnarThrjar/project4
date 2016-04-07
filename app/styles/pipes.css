@@ -1,0 +1,99 @@
+.pipeTop1 {
+    position: absolute;
+    right: 0;
+    width: 10.8em;
+    top: 0;
+    background-position: bottom;
+    background-image: url('../images/kmin-topdown.png');
+    background-size: 100%;
+    background-repeat: no-repeat, repeat-y;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -moz-transform: translateZ(0);
+		background-color: rgba(0, 0, 0, 0.76);
+		z-index: 0;
+
+}
+.pipeBottom1 {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 10.8em;
+    background-image: url('../images/kmin.png');
+    background-size: 100%;
+    background-repeat: no-repeat, repeat-y;
+    background-position: top;
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    transform: translateZ(0);
+		background-color: rgba(0, 0, 0, 0.76);
+		z-index: 0;
+
+
+}
+.pipeTop2 {
+    position: absolute;
+    right: 0;
+    width: 10.8em;
+    top: 0;
+    background-position: bottom;
+    background-image: url('../images/kmin-topdown.png');
+    background-size: 100%;
+    background-repeat: no-repeat, repeat-y;
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    transform: translateZ(0);
+		background-color: rgba(0, 0, 0, 0.76);
+		z-index: 0;
+
+
+}
+.pipeBottom2 {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 10.8em;
+    background-position: top;
+    background-image: url('../images/kmin.png');
+    background-size: 100%;
+    background-repeat: no-repeat, repeat-y;
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    transform: translateZ(0);
+		background-color: rgba(0, 0, 0, 0.76);
+		z-index: 0;
+
+
+}
+.pipeTop3 {
+    position: absolute;
+    right: 0;
+    width: 10.8em;
+    top: 0;
+    background-image: url('../images/kmin-topdown.png');
+    background-size: 100%;
+    background-position: bottom;
+    background-repeat: no-repeat, repeat-y;
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    transform: translateZ(0);
+		background-color: rgba(0, 0, 0, 0.76);
+		z-index: 0;
+
+
+}
+.pipeBottom3 {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 10.8em;
+    background-position: top;
+    background-image: url('../images/kmin.png');
+    background-size: 100%;
+    background-repeat: no-repeat, repeat-y;
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    transform: translateZ(0);
+		background-color: rgba(0, 0, 0, 0.76);
+		z-index: 0;
+}

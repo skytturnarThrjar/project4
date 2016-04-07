@@ -1,0 +1,54 @@
+.Scoreboard {
+    position: absolute;
+    left: 50%;
+    top: 7em;
+    height: 30.5em;
+    width: 55.5em;
+    margin-left: -28em;
+    box-sizing: border-box;
+    background: transparent;
+    background-size: 55.5em 30.5em;
+		background-color:rgb(57, 57, 57);
+    text-align: center;
+    border-radius: 15px;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    -webkit-transform: translate(0, -40em);
+    transform: translate(0, -40em);
+    -moz-transform: translate(0, -40em);
+    -webkit-transition: -webkit-transform 0.5s;
+    transition: transform 0.5s;
+    -moz-transition: -moz-transform 0.5s;
+}
+
+.score {
+    margin-top: 4em;
+    color: white;
+}
+
+.Scoreboard.is-visible {
+    transform: none;
+    -webkit-transform: none;
+    -moz-transform: none;
+}
+.Scoreboard-restart {
+    font-size: inherit;
+    padding: 0.4em 1.5em;
+    border: 0em solid black;
+    border-radius: 5px;
+    cursor: pointer;
+		background-color: white;
+}
+.Scoreboard-restartText {
+    font-size: 2.4em;
+    color: black;
+}
+
+#scores {
+  	font-size: 10em;
+    float: right;
+    margin-top: 0em;
+    margin-right: 0.4em;
+  	z-index: 3;
+}

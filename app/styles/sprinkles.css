@@ -1,0 +1,71 @@
+#sprinkles {
+    top: -10px;
+    position: relative;
+    -webkit-animation: moveSprinkles 15s infinite linear;
+    -moz-animation: moveSprinkles 15s infinite linear;
+    -ms-animation: moveSprinkles 15s infinite linear;
+    z-index: -1;
+}
+#sprinkles2 {
+    position: relative;
+    -webkit-animation: moveSprinkles2 25s infinite linear;
+    -moz-animation: moveSprinkles2 25s infinite linear;
+    -ms-animation: moveSprinkles2 25s infinite linear;
+    z-index: -1;
+}
+.sprinkles {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    background-repeat: no-repeat;
+    background-image: url('../images/sprinkle1.png');
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    transform: translateZ(0);
+}
+.sprinkle1 {
+    left: 40em;
+    top: 2em;
+    background-size: 4em 4em;
+}
+.sprinkle2 {
+    left: 0px;
+    background-size: 5.5em 5.5em;
+}
+.sprinkle3 {
+    left: 70em;
+    top: 1em;
+    background-size: 2.5em 2.5em;
+}
+@-webkit-keyframes moveSprinkles {
+    0% {
+        left: 0px;
+    }
+    49% {
+        left: -94em;
+        opacity: 1;
+    }
+    50% {
+        left: -94em;
+        opacity: 0;
+    }
+    51% {
+        left: 94em;
+        opacity: 0;
+    }
+    52% {
+        left: 94em;
+        opacity: 1;
+    }
+    100% {
+        left: 0em;
+    }
+}
+@-webkit-keyframes moveSprinkles2 {
+    0% {
+        left: 94em;
+    }
+    100% {
+        left: -94em;
+    }
+}
