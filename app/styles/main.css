@@ -21,10 +21,11 @@
 }
 #start {
     position: absolute;
-    font-size: 1.5em;
+    font-size: 0.8em;
     color: black;
-    margin-top: 23em;
+    margin-top: 40em;
     margin-left: 1em;
+
 }
 
 /*Færa þetta í scss skránna*/
@@ -156,6 +157,8 @@ body {
     -webkit-transform: translateZ(0);
     transform: translateZ(0);
     -moz-transform: translateZ(0);
+		background-color: rgba(0, 0, 0, 0.76);
+
 }
 .pipeBottom1 {
     position: absolute;
@@ -169,6 +172,8 @@ body {
     -webkit-transform: translateZ(0);
     -moz-transform: translateZ(0);
     transform: translateZ(0);
+		background-color: rgba(0, 0, 0, 0.76);
+
 }
 .pipeTop2 {
     position: absolute;
@@ -182,6 +187,8 @@ body {
     -webkit-transform: translateZ(0);
     -moz-transform: translateZ(0);
     transform: translateZ(0);
+		background-color: rgba(0, 0, 0, 0.76);
+
 }
 .pipeBottom2 {
     position: absolute;
@@ -195,6 +202,8 @@ body {
     -webkit-transform: translateZ(0);
     -moz-transform: translateZ(0);
     transform: translateZ(0);
+		background-color: rgba(0, 0, 0, 0.76);
+
 }
 .pipeTop3 {
     position: absolute;
@@ -208,6 +217,8 @@ body {
     -webkit-transform: translateZ(0);
     -moz-transform: translateZ(0);
     transform: translateZ(0);
+		background-color: rgba(0, 0, 0, 0.76);
+
 }
 .pipeBottom3 {
     position: absolute;
@@ -221,6 +232,8 @@ body {
     -webkit-transform: translateZ(0);
     -moz-transform: translateZ(0);
     transform: translateZ(0);
+		background-color: rgba(0, 0, 0, 0.76);
+
 }
 @keyframes moveFloor {
     0% {
