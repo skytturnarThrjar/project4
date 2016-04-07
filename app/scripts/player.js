@@ -10,7 +10,7 @@ window.Player = (function() {
 	var INITIAL_POSITION_X = 30;
 	var INITIAL_POSITION_Y = 25;
 	var ROTATE = 0;
-	var PIPEWIDTH = 9;
+	var PIPEWIDTH = 10.8;
 
 	var Player = function(el, game) {
 		this.el = el;
@@ -25,7 +25,7 @@ window.Player = (function() {
 		this.pos.x = INITIAL_POSITION_X;
 		this.pos.y = INITIAL_POSITION_Y;
 		document.getElementById('start').style.display = 'block';
-		this.game.sc = 0;
+		this.game.score = 0;
 	};
 
 	Player.prototype.onFrame = function(delta) {
@@ -73,19 +73,37 @@ window.Player = (function() {
 
 			var pipeBottomY = this.game.WORLD_HEIGHT - help2;//+ parseInt(help2);
 
+			// console.log(pipeX, ' id:', this.game.pipe.pipes[i].id);
+			// console.log('pipex:', pipeX);
+			// console.log(pipeX + PIPEWIDTH);
+
 			if(-this.pos.x + WIDTH - 35 >= pipeX && -this.pos.x - 35 < pipeX + PIPEWIDTH){
 				if(pipeBottomY + 4 <= this.pos.y + HEIGHT || this.pos.y  + 3 <= pipeTopY) {
 					return this.game.gameover();
 				}
-				else {
-						//telja stig
+				// else {
+				// 	if(this.currentPipe !== this.game.pipe.pipes[i].id){
+				// 		this.game.sc++;
+				// 		console.log(this.game.sc);
+				// 		this.currentPipe = this.game.pipe.pipes[i].id;
+				// 	}
+				// }
+			}
+			//TJEKKA HVORT EG SE KOMIN EINUM LENGRA EN SÚLAN
+			else if(pipeX + PIPEWIDTH >= -68 && pipeX + PIPEWIDTH <= -67) {
+				if(this.game.currentPipe !== this.game.pipe.pipes[i].id){
+					this.game.score++;
+					console.log(this.game.score);
+					this.game.currentPipe = this.game.pipe.pipes[i].id;
 				}
 			}
-			else{
-				if(-this.pos.x + WIDTH - 35 >= pipeX && -this.pos.x - 35 <= pipeX + PIPEWIDTH){
-					this.game.sc++;
-				}
-			}
+			// else{
+			// 	if(this.currentPipe !== this.game.pipe.pipes[i].id){
+			// 		this.game.sc++;
+			// 		console.log(this.game.sc);
+			// 		this.currentPipe = this.game.pipe.pipes[i].id;
+			// 	}
+			// }
 		}
 	};
 

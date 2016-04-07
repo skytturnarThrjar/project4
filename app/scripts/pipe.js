@@ -15,9 +15,9 @@ window.Pipe = (function() {
         this.el = el;
         this.game = game;
         this.pipes = [
-            {top: new PipeElement(this.el.find('.pipeTop1'), this.game.WORLD_WIDTH/2, 0), bottom: new PipeElement(this.el.find('.pipeBottom1'), this.game.WORLD_WIDTH/2, 0)},
-            {top: new PipeElement(this.el.find('.pipeTop2'), this.game.WORLD_WIDTH, 0), bottom: new PipeElement(this.el.find('.pipeBottom2'), this.game.WORLD_WIDTH, 0)},
-            {top: new PipeElement(this.el.find('.pipeTop3'), this.game.WORLD_WIDTH * 1.5, 0), bottom: new PipeElement(this.el.find('.pipeBottom3'), this.game.WORLD_WIDTH * 1.5, 0)}
+            {top: new PipeElement(this.el.find('.pipeTop1'), this.game.WORLD_WIDTH/2, 0), bottom: new PipeElement(this.el.find('.pipeBottom1'), this.game.WORLD_WIDTH/2, 0), id: 1},
+            {top: new PipeElement(this.el.find('.pipeTop2'), this.game.WORLD_WIDTH, 0), bottom: new PipeElement(this.el.find('.pipeBottom2'), this.game.WORLD_WIDTH, 0), id: 2},
+            {top: new PipeElement(this.el.find('.pipeTop3'), this.game.WORLD_WIDTH * 1.5, 0), bottom: new PipeElement(this.el.find('.pipeBottom3'), this.game.WORLD_WIDTH * 1.5, 0), id: 3}
         ];
     };
 
@@ -48,12 +48,12 @@ window.Pipe = (function() {
 
     Pipe.prototype.reset = function() {
       //Stilla pípurnar uppá nýtt
-      this.pipes[0].top.pos.x = this.game.WORLD_WIDTH / 2;
-      this.pipes[0].bottom.pos.x = this.game.WORLD_WIDTH / 2;
-      this.pipes[1].top.pos.x = this.game.WORLD_WIDTH;
-      this.pipes[1].bottom.pos.x = this.game.WORLD_WIDTH;
-      this.pipes[2].top.pos.x = this.game.WORLD_WIDTH * 1.5;
-      this.pipes[2].bottom.pos.x = this.game.WORLD_WIDTH * 1.5;
+        this.pipes[0].top.pos.x = this.game.WORLD_WIDTH / 2;
+        this.pipes[0].bottom.pos.x = this.game.WORLD_WIDTH / 2;
+        this.pipes[1].top.pos.x = this.game.WORLD_WIDTH;
+        this.pipes[1].bottom.pos.x = this.game.WORLD_WIDTH;
+        this.pipes[2].top.pos.x = this.game.WORLD_WIDTH * 1.5;
+        this.pipes[2].bottom.pos.x = this.game.WORLD_WIDTH * 1.5;
 
         for(var i = 0; i < this.pipes.length; i++) {
             if(this.game.firstGame) {

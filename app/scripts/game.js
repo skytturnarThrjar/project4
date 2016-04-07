@@ -12,8 +12,9 @@ window.Game = (function() {
 		this.pipe = new window.Pipe(this.el, this);
 		this.isPlaying = false;
 		this.isAlive = false;
-		this.score = -1;
-		this.sc = 0;
+		this.firstGame = true;
+		this.currentPipe = 0;
+		this.score = 0;
 
 		// Cache a bound onFrame since we need it each frame.
 		this.onFrame = this.onFrame.bind(this);
@@ -50,6 +51,7 @@ window.Game = (function() {
 		this.lastFrame = +new Date() / 1000;
 		window.requestAnimationFrame(this.onFrame);
 		this.isPlaying = true;
+		this.currentPipe = 0;
 		document.getElementById('backgroundSong').volume = 0.5;
 		this.reset();
 	};
@@ -70,7 +72,7 @@ window.Game = (function() {
 		// Should be refactored into a Scoreboard class.
 		var that = this;
 		var scoreboardEl = this.el.find('.Scoreboard');
-		document.getElementById('scoreResults').innerHTML=this.sc/3;
+		document.getElementById('scoreResults').innerHTML = this.score;
 
 		scoreboardEl
 			.addClass('is-visible')
