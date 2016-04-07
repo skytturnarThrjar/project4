@@ -57,6 +57,7 @@ window.Pipe = (function() {
     Pipe.prototype.onFrame = function(delta) {
         if(this.game.isAlive) {
             for(var i = 0; i < this.pipes.length; i++) {
+                
                 this.pipes[i].top.pos.x -= delta * SPEED;
                 this.pipes[i].bottom.pos.x -= delta * SPEED;
                 this.pipes[i].top.pipe.css('transform', 'translateZ(0) translateX(' + this.pipes[i].top.pos.x + 'em');

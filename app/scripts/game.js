@@ -1,7 +1,6 @@
 
 window.Game = (function() {
 	'use strict';
-
 	/**
 	 * Main game class.
 	 * @param {Element} el jQuery element containing the game.

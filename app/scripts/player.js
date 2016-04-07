@@ -1,6 +1,6 @@
 window.Player = (function() {
 	'use strict';
-
+	var sc = 1;
 	var Controls = window.Controls;
 
 	// All these constants are in em's, multiply by 10 pixels
@@ -26,6 +26,7 @@ window.Player = (function() {
 		this.pos.x = INITIAL_POSITION_X;
 		this.pos.y = INITIAL_POSITION_Y;
 		document.getElementById('start').style.display = 'block';
+		sc = 0;
 	};
 
 	Player.prototype.onFrame = function(delta) {
@@ -61,6 +62,8 @@ window.Player = (function() {
 
 	Player.prototype.checkCollisionWithPipes = function() {
 		for(var i = 0; i < this.game.pipe.pipes.length; i++) {
+
+
 			var pipeX = Math.floor(this.game.pipe.pipes[i].top.pos.x);
 
 			var help = this.game.pipe.pipes[i].top.pipe[0].style.height;
@@ -76,7 +79,15 @@ window.Player = (function() {
 					return this.game.gameover();
 				}
 				else {
-							//telja stig
+						//telja stig
+				}
+			}
+			else{
+				if(-this.pos.x + WIDTH - 35 >= pipeX && -this.pos.x - 35 <= pipeX + PIPEWIDTH){
+				//if(pipeX <= 31 && pipeX >= 30){
+					console.log(sc);
+					console.log('heeeeeee');
+					sc++;
 				}
 			}
 		}
