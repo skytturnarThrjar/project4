@@ -3,9 +3,13 @@ window.Pipe = (function() {
     'use strict';
 
     var SPEED = 20;
-    var GAP = 15;
+    var GAP = 10;
     var MAX = 34;
     var MIN = 9;
+    var PipeElement = function(pipe, posX, posY) {
+        this.pipe = pipe;
+        this.pos = {x: posX, y: posY};
+    };
 
     var Pipe = function(el, game) {
         this.el = el;
@@ -15,11 +19,6 @@ window.Pipe = (function() {
             {top: new PipeElement(this.el.find('.pipeTop2'), this.game.WORLD_WIDTH, 0), bottom: new PipeElement(this.el.find('.pipeBottom2'), this.game.WORLD_WIDTH, 0)},
             {top: new PipeElement(this.el.find('.pipeTop3'), this.game.WORLD_WIDTH * 1.5, 0), bottom: new PipeElement(this.el.find('.pipeBottom3'), this.game.WORLD_WIDTH * 1.5, 0)}
         ];
-    };
-
-    var PipeElement = function(pipe, posX, posY) {
-        this.pipe = pipe;
-        this.pos = {x: posX, y: posY};
     };
 
     Pipe.prototype.onFrame = function(delta) {
