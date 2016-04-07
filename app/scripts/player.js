@@ -71,6 +71,7 @@ window.Player = (function() {
 			else if(pipeX + PIPEWIDTH >= -68 && pipeX + PIPEWIDTH <= -67) {
 				if(this.game.currentPipe !== this.game.pipe.pipes[i].id){
 					this.game.score++;
+					document.getElementById('scores').innerHTML = this.game.score;
 					document.getElementById('chiching').play();
 					this.game.currentPipe = this.game.pipe.pipes[i].id;
 				}

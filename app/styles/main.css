@@ -312,3 +312,9 @@ body {
     width: 5.6em;
     height: 5.6em;
 }
+
+#scores {
+	font-size: 10em;
+	    float: right;
+	    margin-top: 0em;
+	    margin-right: 0.4em;}
