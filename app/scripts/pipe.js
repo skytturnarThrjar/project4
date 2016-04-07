@@ -28,10 +28,10 @@ window.Pipe = (function() {
                 this.pipes[i].bottom.pos.x -= delta * SPEED;
                 this.pipes[i].top.pipe.css('transform', 'translateZ(0) translateX(' + this.pipes[i].top.pos.x + 'em');
                 this.pipes[i].bottom.pipe.css('transform', 'translateZ(0) translateX(' + this.pipes[i].bottom.pos.x + 'em');
-                // this.pipes[i].top.pipe.css('-webkit-transform', 'translateZ(0) translateX(' + this.pipes[i].top.pos.x + 'em');
-                // this.pipes[i].bottom.pipe.css('-webkit-transform', 'translateZ(0) translateX(' + this.pipes[i].bottom.pos.x + 'em');
-                // this.pipes[i].top.pipe.css('-moz-transform', 'translateZ(0) translateX(' + this.pipes[i].top.pos.x + 'em');
-                // this.pipes[i].bottom.pipe.css('transform', 'translateZ(0) translateX(' + this.pipes[i].bottom.pos.x + 'em');
+                this.pipes[i].top.pipe.css('-webkit-transform', 'translateZ(0) translateX(' + this.pipes[i].top.pos.x + 'em');
+                this.pipes[i].bottom.pipe.css('-webkit-transform', 'translateZ(0) translateX(' + this.pipes[i].bottom.pos.x + 'em');
+                this.pipes[i].top.pipe.css('-moz-transform', 'translateZ(0) translateX(' + this.pipes[i].top.pos.x + 'em');
+                this.pipes[i].bottom.pipe.css('-moz-transform', 'translateZ(0) translateX(' + this.pipes[i].bottom.pos.x + 'em');
 
                 //Pípan komin út fyrir -> stilla hana uppá nýtt
                 if(this.pipes[i].top.pos.x < -this.game.WORLD_WIDTH) {
@@ -64,10 +64,10 @@ window.Pipe = (function() {
             }
             this.pipes[i].top.pipe.css('transform', 'translateZ(0) translateX(' + this.pipes[i].top.pos.x + 'em');
             this.pipes[i].bottom.pipe.css('transform', 'translateZ(0) translateX(' + this.pipes[i].bottom.pos.x + 'em');
-            // this.pipes[i].top.pipe.css('-webkit-transform', 'translateZ(0) translateX(' + this.pipes[i].top.pos.x + 'em');
-            // this.pipes[i].bottom.pipe.css('-webkit-transform', 'translateZ(0) translateX(' + this.pipes[i].bottom.pos.x + 'em');
-            // this.pipes[i].top.pipe.css('-moz-transform', 'translateZ(0) translateX(' + this.pipes[i].top.pos.x + 'em');
-            // this.pipes[i].bottom.pipe.css('transform', 'translateZ(0) translateX(' + this.pipes[i].bottom.pos.x + 'em');
+            this.pipes[i].top.pipe.css('-webkit-transform', 'translateZ(0) translateX(' + this.pipes[i].top.pos.x + 'em');
+            this.pipes[i].bottom.pipe.css('-webkit-transform', 'translateZ(0) translateX(' + this.pipes[i].bottom.pos.x + 'em');
+            this.pipes[i].top.pipe.css('-moz-transform', 'translateZ(0) translateX(' + this.pipes[i].top.pos.x + 'em');
+            this.pipes[i].bottom.pipe.css('-moz-transform', 'translateZ(0) translateX(' + this.pipes[i].bottom.pos.x + 'em');
         }
         this.game.firstGame = false;
     };

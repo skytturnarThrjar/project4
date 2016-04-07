@@ -26,13 +26,6 @@ window.Player = (function() {
 	};
 
 	Player.prototype.onFrame = function(delta) {
-		// if(gameover) {
-		//
-		// }
-		// if (!Controls.keys.space) {
-		// 	ROTATE = -20;
-		// 	this.pos.y += delta * SPEED;
-		// }
 		if (Controls.keys.space) {
 			document.getElementById('start').style.display = 'none';
 			this.game.isAlive = true;
@@ -52,39 +45,27 @@ window.Player = (function() {
 
 		// Update UI
 		this.el.css('transform', 'translate3d(' + this.pos.x + 'em, ' + this.pos.y + 'em, ' + 0 + 'em)' + 'rotate(' + ROTATE + 'deg)');
-		// this.el.css('-webkit-transform', 'translate3d(' + this.pos.x + 'em, ' + this.pos.y + 'em, ' + 0 + 'em)' + 'rotate(' + ROTATE + 'deg)');
-		// this.el.css('-moz-transform', 'translate3d(' + this.pos.x + 'em, ' + this.pos.y + 'em, ' + 0 + 'em)' + 'rotate(' + ROTATE + 'deg)');
+		this.el.css('-webkit-transform', 'translate3d(' + this.pos.x + 'em, ' + this.pos.y + 'em, ' + 0 + 'em)' + 'rotate(' + ROTATE + 'deg)');
+		this.el.css('-moz-transform', 'translate3d(' + this.pos.x + 'em, ' + this.pos.y + 'em, ' + 0 + 'em)' + 'rotate(' + ROTATE + 'deg)');
 	};
 
 	Player.prototype.checkCollisionWithPipes = function() {
 		for(var i = 0; i < this.game.pipe.pipes.length; i++) {
 
-
 			var pipeX = Math.floor(this.game.pipe.pipes[i].top.pos.x);
 
-			var help = this.game.pipe.pipes[i].top.pipe[0].style.height;
-			var pipeTopY = parseFloat(help);
+			var heightTop = this.game.pipe.pipes[i].top.pipe[0].style.height;
+			var pipeTopY = parseFloat(heightTop);
 
-			var help2 = this.game.pipe.pipes[i].bottom.pipe[0].style.height;
-			help2 = parseFloat(help2);
+			var heightBottom = this.game.pipe.pipes[i].bottom.pipe[0].style.height;
+			heightBottom = parseFloat(heightBottom);
 
-			var pipeBottomY = this.game.WORLD_HEIGHT - help2;//+ parseInt(help2);
-
-			// console.log(pipeX, ' id:', this.game.pipe.pipes[i].id);
-			// console.log('pipex:', pipeX);
-			// console.log(pipeX + PIPEWIDTH);
+			var pipeBottomY = this.game.WORLD_HEIGHT - heightBottom;//+ parseInt(help2);
 
 			if(-this.pos.x + WIDTH - 35 >= pipeX && -this.pos.x - 35 < pipeX + PIPEWIDTH){
 				if(pipeBottomY + 4 <= this.pos.y + HEIGHT || this.pos.y  + 3 <= pipeTopY) {
 					return this.game.gameover();
 				}
-				// else {
-				// 	if(this.currentPipe !== this.game.pipe.pipes[i].id){
-				// 		this.game.sc++;
-				// 		console.log(this.game.sc);
-				// 		this.currentPipe = this.game.pipe.pipes[i].id;
-				// 	}
-				// }
 			}
 			//TJEKKA HVORT EG SE KOMIN EINUM LENGRA EN SÚLAN
 			else if(pipeX + PIPEWIDTH >= -68 && pipeX + PIPEWIDTH <= -67) {
@@ -94,13 +75,6 @@ window.Player = (function() {
 					this.game.currentPipe = this.game.pipe.pipes[i].id;
 				}
 			}
-			// else{
-			// 	if(this.currentPipe !== this.game.pipe.pipes[i].id){
-			// 		this.game.sc++;
-			// 		console.log(this.game.sc);
-			// 		this.currentPipe = this.game.pipe.pipes[i].id;
-			// 	}
-			// }
 		}
 	};
 
@@ -109,9 +83,6 @@ window.Player = (function() {
 		console.log(this.pos.Y + WIDTH);
 		if (this.pos.y + HEIGHT > this.game.WORLD_HEIGHT - this.game.WORLD_HEIGHT*0.09) {
 			this.game.isAlive = false;
-			if(document.getElementById('laugh').className === 'on') {
-				document.getElementById('laugh').play();
-			}
 			return this.game.gameover();
 		}
 	};
