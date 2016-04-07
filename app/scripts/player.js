@@ -1,6 +1,5 @@
 window.Player = (function() {
 	'use strict';
-	var sc = 1;
 	var Controls = window.Controls;
 
 	// All these constants are in em's, multiply by 10 pixels
@@ -26,7 +25,7 @@ window.Player = (function() {
 		this.pos.x = INITIAL_POSITION_X;
 		this.pos.y = INITIAL_POSITION_Y;
 		document.getElementById('start').style.display = 'block';
-		sc = 0;
+		this.game.sc = 0;
 	};
 
 	Player.prototype.onFrame = function(delta) {
@@ -56,8 +55,8 @@ window.Player = (function() {
 
 		// Update UI
 		this.el.css('transform', 'translate3d(' + this.pos.x + 'em, ' + this.pos.y + 'em, ' + 0 + 'em)' + 'rotate(' + ROTATE + 'deg)');
-		this.el.css('-webkit-transform', 'translate3d(' + this.pos.x + 'em, ' + this.pos.y + 'em, ' + 0 + 'em)' + 'rotate(' + ROTATE + 'deg)');
-		this.el.css('-moz-transform', 'translate3d(' + this.pos.x + 'em, ' + this.pos.y + 'em, ' + 0 + 'em)' + 'rotate(' + ROTATE + 'deg)');
+		// this.el.css('-webkit-transform', 'translate3d(' + this.pos.x + 'em, ' + this.pos.y + 'em, ' + 0 + 'em)' + 'rotate(' + ROTATE + 'deg)');
+		// this.el.css('-moz-transform', 'translate3d(' + this.pos.x + 'em, ' + this.pos.y + 'em, ' + 0 + 'em)' + 'rotate(' + ROTATE + 'deg)');
 	};
 
 	Player.prototype.checkCollisionWithPipes = function() {
@@ -75,7 +74,7 @@ window.Player = (function() {
 			var pipeBottomY = this.game.WORLD_HEIGHT - help2;//+ parseInt(help2);
 
 			if(-this.pos.x + WIDTH - 35 >= pipeX && -this.pos.x - 35 < pipeX + PIPEWIDTH){
-				if(pipeBottomY + 3 <= this.pos.y + HEIGHT || this.pos.y  + 3 <= pipeTopY) {
+				if(pipeBottomY + 4 <= this.pos.y + HEIGHT || this.pos.y  + 3 <= pipeTopY) {
 					return this.game.gameover();
 				}
 				else {
@@ -84,10 +83,7 @@ window.Player = (function() {
 			}
 			else{
 				if(-this.pos.x + WIDTH - 35 >= pipeX && -this.pos.x - 35 <= pipeX + PIPEWIDTH){
-				//if(pipeX <= 31 && pipeX >= 30){
-					console.log(sc);
-					console.log('heeeeeee');
-					sc++;
+					this.game.sc++;
 				}
 			}
 		}
