@@ -12,7 +12,7 @@ window.Game = (function() {
 		this.pipe = new window.Pipe(this.el, this);
 		this.isPlaying = false;
 		this.isAlive = false;
-		this.score = -1;
+		this.firstGame = true;
 		this.sc = 0;
 
 		// Cache a bound onFrame since we need it each frame.
