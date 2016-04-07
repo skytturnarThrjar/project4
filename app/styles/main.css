@@ -149,6 +149,7 @@ body {
     transform: translateZ(0);
     -moz-transform: translateZ(0);
 		background-color: rgba(0, 0, 0, 0.76);
+		z-index: 0;
 
 }
 .pipeBottom1 {
@@ -164,6 +165,8 @@ body {
     -moz-transform: translateZ(0);
     transform: translateZ(0);
 		background-color: rgba(0, 0, 0, 0.76);
+		z-index: 0;
+
 
 }
 .pipeTop2 {
@@ -179,6 +182,8 @@ body {
     -moz-transform: translateZ(0);
     transform: translateZ(0);
 		background-color: rgba(0, 0, 0, 0.76);
+		z-index: 0;
+
 
 }
 .pipeBottom2 {
@@ -194,6 +199,8 @@ body {
     -moz-transform: translateZ(0);
     transform: translateZ(0);
 		background-color: rgba(0, 0, 0, 0.76);
+		z-index: 0;
+
 
 }
 .pipeTop3 {
@@ -209,6 +216,8 @@ body {
     -moz-transform: translateZ(0);
     transform: translateZ(0);
 		background-color: rgba(0, 0, 0, 0.76);
+		z-index: 0;
+
 
 }
 .pipeBottom3 {
@@ -224,6 +233,8 @@ body {
     -moz-transform: translateZ(0);
     transform: translateZ(0);
 		background-color: rgba(0, 0, 0, 0.76);
+		z-index: 0;
+
 
 }
 @keyframes moveFloor {
@@ -311,10 +322,13 @@ body {
 #muteImage {
     width: 5.6em;
     height: 5.6em;
+		z-index: 3;
 }
 
 #scores {
 	font-size: 10em;
 	    float: right;
 	    margin-top: 0em;
-	    margin-right: 0.4em;}
+	    margin-right: 0.4em;
+			z-index: 3;
+}
