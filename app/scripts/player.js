@@ -24,7 +24,6 @@ window.Player = (function() {
 		document.getElementById('start').style.display = 'block';
 		this.game.score = 0;
 		document.getElementById('scores').innerHTML = this.game.score;
-
 	};
 
 	Player.prototype.onFrame = function(delta) {
