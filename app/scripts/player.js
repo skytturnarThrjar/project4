@@ -18,9 +18,6 @@ window.Player = (function() {
 		this.pos = { x: INITIAL_POSITION_X, y: INITIAL_POSITION_Y };
 	};
 
-	/**
-	 * Resets the state of the player for a new game.
-	 */
 	Player.prototype.reset = function() {
 		this.pos.x = INITIAL_POSITION_X;
 		this.pos.y = INITIAL_POSITION_Y;
@@ -108,7 +105,9 @@ window.Player = (function() {
 	};
 
 	Player.prototype.checkCollisionWithBounds = function() {
-		if (this.pos.y + HEIGHT > this.game.WORLD_HEIGHT) {
+		console.log(this.game.WORLD_HEIGHT + this.game.WORLD_HEIGHT*0.5);
+		console.log(this.pos.Y + WIDTH);
+		if (this.pos.y + HEIGHT > this.game.WORLD_HEIGHT - this.game.WORLD_HEIGHT*0.09) {
 			this.game.isAlive = false;
 			if(document.getElementById('laugh').className === 'on') {
 				document.getElementById('laugh').play();
