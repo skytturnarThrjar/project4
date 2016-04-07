@@ -25,6 +25,7 @@ window.Player = (function() {
 	Player.prototype.reset = function() {
 		this.pos.x = INITIAL_POSITION_X;
 		this.pos.y = INITIAL_POSITION_Y;
+		document.getElementById('start').style.display = 'block';
 	};
 
 	Player.prototype.onFrame = function(delta) {
@@ -36,6 +37,7 @@ window.Player = (function() {
 		// 	this.pos.y += delta * SPEED;
 		// }
 		if (Controls.keys.space) {
+			document.getElementById('start').style.display = 'none';
 			this.game.isAlive = true;
 			ROTATE = 70;
 			if(document.getElementById('yoSound').className === 'on') {

@@ -19,6 +19,14 @@
 	-moz-transform: translateZ(0);
 }
 
+#start{
+	position: absolute;
+	font-size: 1.5em;
+	color: black;
+	margin-top: 23em;
+	margin-left: 1em;
+
+}
 /*Færa þetta í scss skránna*/
 @keyframes assFlap {
   0% {background-position: 0em 11.6em;}
