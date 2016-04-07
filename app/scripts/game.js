@@ -53,8 +53,6 @@ window.Game = (function() {
 		this.isPlaying = true;
 		this.currentPipe = 0;
 		document.getElementById('backgroundSong').volume = 0.5;
-		document.getElementById('backgroundSong').play();
-
 		this.reset();
 	};
 
@@ -75,15 +73,11 @@ window.Game = (function() {
 		var that = this;
 		var scoreboardEl = this.el.find('.Scoreboard');
 		document.getElementById('scoreResults').innerHTML = this.score;
-		if(document.getElementById('laugh').className === 'on') {
-			document.getElementById('laugh').play();
-		}
-		document.getElementById('backgroundSong').pause();
 
 		scoreboardEl
 			.addClass('is-visible')
 			.find('.Scoreboard-restart')
-				.on('click touchstart tap' , function() {
+				.on('click touchstart', function() {
 					scoreboardEl.removeClass('is-visible');
 					that.pipe.reset();
 					that.start();
