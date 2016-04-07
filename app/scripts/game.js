@@ -12,12 +12,13 @@ window.Game = (function() {
 		this.pipe = new window.Pipe(this.el, this);
 		this.isPlaying = false;
 		this.isAlive = false;
-		this.firstGame = true;
+		this.score = -1;
 		this.sc = 0;
 
 		// Cache a bound onFrame since we need it each frame.
 		this.onFrame = this.onFrame.bind(this);
 	};
+
 	/**
 	 * Runs every frame. Calculates a delta and allows each game
 	 * entity to update itself.
@@ -69,7 +70,8 @@ window.Game = (function() {
 		// Should be refactored into a Scoreboard class.
 		var that = this;
 		var scoreboardEl = this.el.find('.Scoreboard');
-		document.getElementById('scoreResults').value = Math.floor(this.sc/3);
+		document.getElementById('scoreResults').innerHTML=this.sc/3;
+
 		scoreboardEl
 			.addClass('is-visible')
 			.find('.Scoreboard-restart')
